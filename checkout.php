@@ -12,6 +12,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Checkout</h3>
+						<?php 
+							if(!empty($_SESSION['CARRITO'])){
+						?>
 					</div>
 				</div>
 				<!-- /row -->
@@ -34,18 +37,51 @@
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
-								<div><strong>Nombre</strong></div>
-								<div><strong>Cantidad</strong></div>
-								<div><strong>Precio</strong></div>
-								<div><strong>--</strong></div>
-							</div>
-							<div class="order-col">
-								<div>Shiping</div>
-								<div><strong>FREE</strong></div>
+								<table class="table table-light table-bordered">
+									<tbody>
+										<tr>
+											<th width="40%">Nombre</th>
+											<th width="15%">Cantidad</th>
+											<th width="20%">Precio</th>
+											<th width="20%">Total</th>
+											<th width="5%">--</th>
+										</tr>
+
+										<?php $total= 0; ?>
+										<?php foreach($_SESSION['CARRITO'] as $indice=>$producto){?>
+
+										<tr>
+											<?php $id= $producto['id'] ?>
+											<?php $date= $producto['date'] ?>
+											<?php $status= $producto['status'] ?>
+											<td width="40%"> <?php echo $producto['product_name'] ?> </td>
+											<td width="15%"><?php echo $producto['cantidad'] ?></td>
+											<td width="20%">$<?php echo $producto['price'] ?></td>
+											<td width="20%">$<?php echo number_format($producto['price']*$producto['cantidad'],2); ?></td>
+											<td width="5%"> 
+												<form action="" method="POST">
+													<input type="hidden" name="id" value="<?php echo $id; ?>">
+													<button class="btn btn-danger" name="btnaccion" value="eliminar" type="submit">
+														Eliminar
+													</button> 
+												</form>
+											</td>
+										</tr>
+										<?php $total= $total+($producto['price']*$producto['cantidad']); ?>
+										<?php } ?>
+
+									</tbody>
+								</table>
+								<?php 
+									}
+									else{ 
+										echo"<script>alert('Sin productos')</script>";
+									}
+								?>
 							</div>
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$2940.00</strong></div>
+								<div><strong class="order-total">$<?php echo number_format($total,2); ?></strong></div>
 							</div>
 						</div>
 						<div class="payment-method">

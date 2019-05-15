@@ -90,9 +90,8 @@
 													echo $producto['categoria'];													
 													?> </p>
 												<h3 class="product-name">
-													<?php 
-														$nombreProducto=$producto['nombre'];
-														echo $nombreProducto; 
+													<?php
+														echo $producto['nombre']; 
 													?> </h3>
 												<h4 class="product-price">$<?php echo $producto['precio'] ?> </h4>
 												<!-- <div class="product-btns">
@@ -104,6 +103,7 @@
 											<div class="add-to-cart">
 											<form action="" method="POST">
 												<input type="hidden" name="product_id" id="product_id" value="<?php echo $producto['productoId'] ?>">
+												<input type="hidden" name="product_name" id="product_name" value="<?php echo $producto['nombre'] ?>">
 												<input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1 ?>">
 												<input type="hidden" name="price" id="price" value="<?php echo $producto['precio'] ?>">
 												<input type="hidden" name="date" id="date" value="<?php echo $date ?>">
