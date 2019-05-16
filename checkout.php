@@ -96,7 +96,7 @@
 												<input id="email" name="email" type="text" class="form-control" placeholder="Escribe tu número celular ej:(4423917589)" require>
 											</div>
 										</div> -->
-											
+												
 											<button class="primary-btn order-submit" type="submit" value="proceder" name="btnaccion">
 												Continuar con la compra
 											</button>										
