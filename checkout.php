@@ -60,7 +60,7 @@
 											<td width="20%">$<?php echo number_format($producto['price']*$producto['cantidad'],2); ?></td>
 											<td width="5%"> 
 												<form action="" method="POST">
-													<input type="hidden" name="id" value="<?php echo $id; ?>">
+													<input type="hidden" name="id" id="id" value="<?php echo $producto['id']; ?>">
 													<button class="btn btn-danger" name="btnaccion" value="eliminar" type="submit">
 														Eliminar
 													</button> 
@@ -75,7 +75,7 @@
 								<?php 
 									}
 									else{ 
-										echo"<script>alert('Sin productos')</script>";
+										echo"('Sin productos')";
 									}
 								?>
 							</div>
@@ -84,46 +84,26 @@
 								<div><strong class="order-total">$<?php echo number_format($total,2); ?></strong></div>
 							</div>
 						</div>
-						<div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1">
-								<label for="payment-1">
-									<span></span>
-									Direct Bank Transfer
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
-									<span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3">
-								<label for="payment-3">
-									<span></span>
-									Paypal System
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
+						<div class="payment-method">						
 						</div>
-						<div class="input-checkbox">
-							<input type="checkbox" id="terms">
-							<label for="terms">
-								<span></span>
-								I've read and accept the <a href="#">terms & conditions</a>
-							</label>
-						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						<table>
+							<tr>
+								<td colspan="5">
+									<form action="pagar.php" method="POST">
+										<!-- <div class="alert alert-success">
+											<div class="form-group">
+												<label for="my-input">Telefono de contacto:</label>
+												<input id="email" name="email" type="text" class="form-control" placeholder="Escribe tu número celular ej:(4423917589)" require>
+											</div>
+										</div> -->
+											
+											<button class="primary-btn order-submit" type="submit" value="proceder" name="btnaccion">
+												Continuar con la compra
+											</button>										
+									</form>									
+								</td>
+							</tr>
+						</table>						
 					</div>
 					<!-- /Order Details -->
 				</div>

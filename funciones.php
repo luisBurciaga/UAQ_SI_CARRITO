@@ -3,16 +3,17 @@ session_start();
 
 if(isset($_POST['btnaccion'])){
 
-    $idProducto=$_POST['product_id'];
-    $product_name=$_POST['product_name'];
-    $cantidad=$_POST['cantidad'];
-    $price=$_POST['price'];
-    $date=$_POST['date'];
-    $status=$_POST['status'];
-
     switch($_POST['btnaccion'])
     {
         case 'agregar':
+
+        $idProducto=$_POST['product_id'];
+        $product_name=$_POST['product_name'];
+        $cantidad=$_POST['cantidad'];
+        $price=$_POST['price'];
+        $date=$_POST['date'];
+        $status=$_POST['status'];
+
         if(!isset($_SESSION['CARRITO'])){
             $productoArray = array(
                 'id'=> $idProducto,
@@ -42,6 +43,8 @@ if(isset($_POST['btnaccion'])){
         break;
 
         case 'eliminar':
+            $idProducto=$_POST['id'];
+
             foreach($_SESSION['CARRITO'] as $indie=>$productoArray){
                 if($productoArray['id']==$idProducto){
                     UNSET($_SESSION['CARRITO'][$indie]);
