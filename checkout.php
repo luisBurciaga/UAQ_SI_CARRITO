@@ -72,12 +72,7 @@
 
 									</tbody>
 								</table>
-								<?php 
-									}
-									else{ 
-										echo"('Sin productos')";
-									}
-								?>
+								
 							</div>
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
@@ -86,6 +81,36 @@
 						</div>
 						<div class="payment-method">						
 						</div>
+												
+					</div>
+					<!-- /Order Details -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<div class="col-md-7">
+			<!-- Billing Details -->
+			<div class="billing-details">
+							<div class="section-title">
+								<h3 class="title">Direccion</h3>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="username" name="username" placeholder="Nombre">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="userlastname" name="userlastname" placeholder="Apellido">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="telefono" name="telefono" placeholder="Telefono">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección">
+							</div>
+						</div>
+						<!-- /Billing Details -->
 						<table>
 							<tr>
 								<td colspan="5">
@@ -99,19 +124,24 @@
 												
 											<button class="primary-btn order-submit" type="submit" value="proceder" name="btnaccion">
 												Continuar con la compra
-											</button>										
+											</button>
+											<p>
+												<p>
+													<br>
+												</p>
+											</p>										
 									</form>									
 								</td>
 							</tr>
-						</table>						
-					</div>
-					<!-- /Order Details -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
+						</table>
+						<?php 
+									}
+									else{ 
+										echo"('Sin productos')";
+									}
+								?>
 		</div>
-		<!-- /SECTION -->
+
 
 		<!-- jQuery Plugins -->
 		<script src="js/jquery.min.js"></script>

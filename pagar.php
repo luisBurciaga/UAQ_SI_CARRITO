@@ -10,6 +10,11 @@
         // $cantidad=0;
 
         foreach($_SESSION['CARRITO'] as $indice=>$producto){
+            $username = $producto['username'];
+            $userlastname = $producto['userlastname'];
+            $telefono = $producto['telefono'];
+            $direccion = $producto['direccion'];
+
             $product_id = $producto['id'];
             $name = $producto['product_name'];
             $qty = $producto['cantidad'];
