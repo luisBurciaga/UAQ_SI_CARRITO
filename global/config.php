@@ -2,5 +2,5 @@
     define("server","localhost");
     define("user","root");
     define("password","");
-    define("BD","vegetales");
+    define("BD","vegetales_carrito");
 ?>

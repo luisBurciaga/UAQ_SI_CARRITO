@@ -84,63 +84,55 @@
 												
 					</div>
 					<!-- /Order Details -->
+
+					
+					<div class="col-md-6" style="margin-left:5%;">
+						
+									<!-- /Billing Details -->
+												<form action="pagar.php" method="POST">
+
+													<!-- Billing Details -->
+													<div class="billing-details">
+														<div class="section-title">
+																<h3 class="title">Direccion</h3>
+															</div>
+															<div class="form-group">
+																<input class="input" type="text" id="username" name="username" placeholder="Nombre">
+															</div>
+															<div class="form-group">
+																<input class="input" type="text" id="userlastname" name="lastname" placeholder="Apellido">
+															</div>
+															<div class="form-group">
+																<input class="input" type="text" id="telefono" name="telefono" placeholder="Telefono">
+															</div>
+															<div class="form-group">
+																<input class="input" type="text" id="direccion" name="direccion" placeholder="Col. Nombre, Calle #">
+															</div>
+														</div>
+															
+														<button class="primary-btn order-submit" type="submit" value="proceder" name="btnaccion">
+															Continuar con la compra
+														</button>
+																							
+												</form>									
+											
+									<?php 
+										}
+										else{ 
+											echo"('Sin productos')";
+										}
+									?>
+					</div>
+				
 				</div>
 				<!-- /row -->
+
 			</div>
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
 
-		<div class="col-md-7">
-			<!-- Billing Details -->
-			<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Direccion</h3>
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" id="username" name="username" placeholder="Nombre">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" id="userlastname" name="userlastname" placeholder="Apellido">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" id="telefono" name="telefono" placeholder="Telefono">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección">
-							</div>
-						</div>
-						<!-- /Billing Details -->
-						<table>
-							<tr>
-								<td colspan="5">
-									<form action="pagar.php" method="POST">
-										<!-- <div class="alert alert-success">
-											<div class="form-group">
-												<label for="my-input">Telefono de contacto:</label>
-												<input id="email" name="email" type="text" class="form-control" placeholder="Escribe tu número celular ej:(4423917589)" require>
-											</div>
-										</div> -->
-												
-											<button class="primary-btn order-submit" type="submit" value="proceder" name="btnaccion">
-												Continuar con la compra
-											</button>
-											<p>
-												<p>
-													<br>
-												</p>
-											</p>										
-									</form>									
-								</td>
-							</tr>
-						</table>
-						<?php 
-									}
-									else{ 
-										echo"('Sin productos')";
-									}
-								?>
-		</div>
+	
 
 
 		<!-- jQuery Plugins -->
